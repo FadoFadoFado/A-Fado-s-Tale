@@ -1296,14 +1296,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (leftPathButton) {
       leftPathButton.addEventListener("click", function () {
         // For left, go to cave4.html (enemy fight and chest reward)
-        window.location.href = "cave4.html";
+        window.location.href = "Cave4.html";
       });
     }
 
     if (rightPathButton) {
       rightPathButton.addEventListener("click", function () {
         // For right, go to cave5.html (deadend with crafting)
-        window.location.href = "cave5.html";
+        window.location.href = "Cave5.html";
       });
     }
   }
