@@ -1274,9 +1274,9 @@ function finishResourceMinigame() {
   nextButton.className = "menu-option";
   nextButton.addEventListener("click", function () {
     if (document.title.includes("Cave5")) {
-      window.location.href = "cave5.html";
+      window.location.href = "Cave5.html";
     } else {
-      window.location.href = "cave1.html";
+      window.location.href = "Cave1.html";
     }
   });
 
@@ -1438,7 +1438,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (goBackButton) {
     goBackButton.addEventListener("click", function () {
       // Redirect to your desired page, e.g., forest2.html
-      window.location.href = "cave3.html";
+      window.location.href = "Cave3.html";
     });
   } else {
     console.error("goBackButton not found");
@@ -1481,7 +1481,7 @@ function showCave4ChestDialogue() {
       ? parseInt(inventory.gunpowder, 10) + 15
       : 15;
     localStorage.setItem("inventory", JSON.stringify(inventory));
-    window.location.href = "cave3.html";
+    window.location.href = "Cave3.html";
   });
 
   chestDialogue.appendChild(chestText);
@@ -1532,7 +1532,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     rightButton.addEventListener("click", function () {
-      window.location.href = "Middlesectioncave.html";
+      window.location.href = "middlesectioncave.html";
     });
   }
 });
@@ -1575,7 +1575,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document
       .getElementById("doorButton")
       .addEventListener("click", function () {
-        window.location.href = "lowersectioncave.html";
+        window.location.href = "Lowersectioncave.html";
       });
     // Check puzzle completion on load
     checkAncientHousePuzzles();
@@ -1983,7 +1983,7 @@ function startRotatingKeyPuzzle() {
         "The key fits perfectly! You unlocked the door.",
         function () {
           localStorage.setItem("puzzle1Complete", "true");
-          window.location.href = "lowersectioncave.html";
+          window.location.href = "Lowersectioncave.html";
         }
       );
     } else {
@@ -2002,7 +2002,7 @@ function startRotatingKeyPuzzle() {
   });
 
   exitButton.addEventListener("click", function () {
-    window.location.href = "lowersectioncave.html";
+    window.location.href = "Lowersectioncave.html";
   });
 
   function showPuzzleDialogue(message, callback) {
@@ -2143,7 +2143,7 @@ function startStoneBalancingPuzzle() {
         "The scale is perfectly balanced! Puzzle complete.",
         function () {
           localStorage.setItem("puzzle2Complete", "true");
-          window.location.href = "lowersectioncave.html";
+          window.location.href = "Lowersectioncave.html";
         }
       );
     } else if (balancePercentage >= 70) {
@@ -2242,7 +2242,7 @@ function startStoneBalancingPuzzle() {
   }
 
   exitButton.addEventListener("click", function () {
-    window.location.href = "lowersectioncave.html";
+    window.location.href = "Lowersectioncave.html";
   });
 
   function showPuzzleDialogue(message, callback) {
@@ -2364,7 +2364,7 @@ function startWaterFlowPuzzle() {
         : "The water is not flowing correctly. Adjust the pipes and try again.",
       solved
         ? function () {
-            window.location.href = "lowersectioncave.html";
+            window.location.href = "Lowersectioncave.html";
           }
         : function () {}
     );
@@ -2482,7 +2482,7 @@ function startStarAlignmentPuzzle() {
       solved
         ? function () {
             localStorage.setItem("puzzle4Complete", "true");
-            window.location.href = "lowersectioncave.html";
+            window.location.href = "Lowersectioncave.html";
           }
         : function () {}
     );
@@ -2566,7 +2566,7 @@ function startRopeCuttingPuzzle() {
             "You've cut the ropes in the correct order! Puzzle complete.",
             function () {
               localStorage.setItem("puzzle5Complete", "true");
-              window.location.href = "lowersectioncave.html";
+              window.location.href = "Lowersectioncave.html";
             }
           );
         }
