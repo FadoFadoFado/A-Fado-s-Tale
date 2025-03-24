@@ -1,4 +1,4 @@
-// For Main Menu Page
+
 
 const startButton = document.getElementById("startGame");
 if (startButton) {
@@ -7,7 +7,6 @@ if (startButton) {
   });
 }
 
-// Options and Controls Button (from Main Menu)
 const optionsButton = document.getElementById("options");
 if (optionsButton) {
   optionsButton.addEventListener("click", function () {
@@ -15,7 +14,6 @@ if (optionsButton) {
   });
 }
 
-// Saves Button (from Main Menu)
 const savesButton = document.getElementById("saves");
 if (savesButton) {
   savesButton.addEventListener("click", function () {
@@ -23,7 +21,7 @@ if (savesButton) {
   });
 }
 
-// Back to Menu Button for options in main menu
+
 const backButton = document.getElementById("backButton");
 if (backButton) {
   backButton.addEventListener("click", function () {
@@ -31,7 +29,7 @@ if (backButton) {
   });
 }
 
-// Back to Menu Button for saves in main menu
+
 const backToMenu = document.getElementById("backToMenu");
 if (backToMenu) {
   backToMenu.addEventListener("click", function () {
@@ -39,7 +37,7 @@ if (backToMenu) {
   });
 }
 
-//Exit button for main menu
+
 const exitButton = document.getElementById("exit");
 if (exitButton) {
   exitButton.addEventListener("click", function () {
@@ -53,7 +51,7 @@ if (exitButton) {
   });
 }
 
-// living room/ cutscene
+
 if (document.querySelector(".livingroom-container")) {
   window.addEventListener("load", function () {
     const stormSound = document.getElementById("stormSound");
@@ -65,7 +63,7 @@ if (document.querySelector(".livingroom-container")) {
     const bedroomChoice = document.getElementById("bedroomChoice");
     const basementChoice = document.getElementById("basementChoice");
 
-    // Shows the exclamation mark after 2 seconds
+
     setTimeout(function () {
       if (stormSound) {
         stormSound.volume = 0.3;
@@ -76,15 +74,15 @@ if (document.querySelector(".livingroom-container")) {
       }
     }, 2000);
 
-    // When the exclamation mark is clicked, then it shows the dialogue box
+
     if (exclamation) {
       exclamation.addEventListener("click", function () {
-        exclamation.style.display = "none"; // Hides the exclamation mark
-        dialogueBox.style.display = "block"; // Shows the dialogue box
+        exclamation.style.display = "none"; 
+        dialogueBox.style.display = "block";
       });
     }
 
-    // When the "Next" button is clicked, replaces text with choices
+
     if (nextButton) {
       nextButton.addEventListener("click", function () {
         dialogueText.innerText = "Where should I hide?";
@@ -93,22 +91,22 @@ if (document.querySelector(".livingroom-container")) {
       });
     }
 
-    // Event listeners for choices
+
     if (bedroomChoice) {
       bedroomChoice.addEventListener("click", function () {
-        window.location.href = "hidingbedroom.html"; // Redirects to bedroom
+        window.location.href = "hidingbedroom.html"; 
       });
     }
 
     if (basementChoice) {
       basementChoice.addEventListener("click", function () {
-        window.location.href = "hidingbasement.html"; // Redirects to basement
+        window.location.href = "hidingbasement.html"; 
       });
     }
   });
 }
 
-//bedroom cutscene//
+
 
 if (document.querySelector(".bedroom-container")) {
   window.addEventListener("load", function () {
@@ -141,7 +139,6 @@ if (document.querySelector(".bedroom-container")) {
   });
 }
 
-// Basement cutscene
 if (document.querySelector(".basement-container")) {
   window.addEventListener("load", function () {
     const locationStormSound = document.getElementById("locationStormSound");
@@ -191,9 +188,9 @@ function updateOutsideOption() {
   }
 }
 
-// Living Room Main Page
+
 if (document.getElementById("locationDialogueBox")) {
-  // Force the dialogue box to show if on livingroommain.html
+
   const dialogueBox = document.getElementById("locationDialogueBox");
   if (dialogueBox) {
     dialogueBox.style.display = "block";
@@ -225,7 +222,7 @@ if (document.getElementById("locationDialogueBox")) {
 }
 
 window.addEventListener("load", function () {
-  // Determine which location page we're on by checking document.title
+
   const returnButton = document.getElementById("locationReturnButton");
   let inventory = JSON.parse(localStorage.getItem("inventory") || "{}");
 
@@ -292,12 +289,12 @@ document.addEventListener("DOMContentLoaded", function () {
   if (nextButton2) {
     nextButton2.addEventListener("click", function () {
       if (outsideContainer2) outsideContainer2.style.display = "none";
-      triggerQTE(); // Start the Quick Time Event
+      triggerQTE(); 
     });
   }
 });
 
-// Quick Time Event (QTE)
+
 function triggerQTE() {
   const qteContainer = document.createElement("div");
   qteContainer.id = "qteContainer";
@@ -339,7 +336,7 @@ function triggerQTE() {
   const countdownText = document.createElement("p");
   countdownText.style.color = "white";
   countdownText.style.fontSize = "1.5rem";
-  countdownText.innerText = "5.0"; // 5 seconds
+  countdownText.innerText = "5.0"; 
 
   qteContainer.appendChild(instructionText);
   qteContainer.appendChild(barContainer);
@@ -397,7 +394,7 @@ function triggerQTE() {
   document.addEventListener("touchstart", touchHandler);
 }
 
-// Failure Dialogue (Leads to forest1.html)
+
 function showFailureDialogue() {
   const failureDialogue = document.createElement("div");
   failureDialogue.id = "failureDialogue";
@@ -442,7 +439,7 @@ function showFailureDialogue() {
   });
 }
 
-// Success Dialogue (1% Secret Ending, Returns to index.html)
+
 function showSuccessDialogue() {
   const successDialogue = document.createElement("div");
   successDialogue.id = "successDialogue";
@@ -488,7 +485,7 @@ function showSuccessDialogue() {
   });
 }
 
-//  Game Functionality
+
 document.addEventListener("DOMContentLoaded", function () {
   let storedHealth = localStorage.getItem("playerHealth");
   let health = storedHealth !== null ? parseFloat(storedHealth) : 100;
@@ -512,7 +509,7 @@ document.addEventListener("DOMContentLoaded", function () {
   updateBars();
 
   setInterval(function () {
-    // Deplete food and water slowly
+   
     if (food > 0) {
       food -= 0.5;
       if (food < 0) food = 0;
@@ -533,7 +530,7 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("playerHealth", health);
   }, 5000);
 
-  // Pause Menu
+
   const menuButton = document.getElementById("menuButton");
   const pauseMenu = document.getElementById("pauseMenu");
   const resumeButton = document.getElementById("resumeButton");
@@ -554,7 +551,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Inventory
   const inventoryOverlay = document.getElementById("inventoryOverlay");
   const closeInventory = document.getElementById("closeInventory");
   function updateInventoryOverlay() {
@@ -626,7 +622,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (inventoryOverlay.style.display === "flex") {
           inventoryOverlay.style.display = "none";
         } else {
-          updateInventoryOverlay(); // Ensure inventory is updated before showing
+          updateInventoryOverlay(); 
           inventoryOverlay.style.display = "flex";
         }
       }
@@ -665,7 +661,7 @@ if (document.getElementById("battleContainer")) {
 
   let storedHealth = localStorage.getItem("playerHealth");
   let playerHealth = storedHealth !== null ? parseFloat(storedHealth) : 100;
-  let enemyHealth = 20; // Enemy health for this encounter
+  let enemyHealth = 20; 
 
   console.log("Current document title:", document.title);
   console.log("Redirect outcome:", getBattleOutcomeRedirect());
@@ -807,7 +803,7 @@ if (document.getElementById("battleContainer")) {
       }, 1000);
     });
 
-    // Run option during battle:
+
     battleRunButton.addEventListener("click", function () {
       battleDialogue.innerHTML = "";
       const runMsg = document.createElement("p");
@@ -830,7 +826,7 @@ if (document.getElementById("battleContainer")) {
     });
   }
 
-  // Function to update battle status text in the dialogue box
+
   function updateBattleStatus() {
     const statusText = document.getElementById("battleStatus");
     if (statusText) {
@@ -838,7 +834,6 @@ if (document.getElementById("battleContainer")) {
     }
   }
 
-  // Enemy attack function
   function enemyAttack() {
     const enemyDamage = 4;
     playerHealth -= enemyDamage;
@@ -858,7 +853,7 @@ if (document.getElementById("battleContainer")) {
         deathMsg.innerText = "You have been defeated! Restarting battle...";
         battleDialogue.appendChild(deathMsg);
         setTimeout(function () {
-          // Reset only on defeat
+         
           playerHealth = 100;
           enemyHealth = 20;
           updateGlobalHealthBar();
@@ -874,7 +869,7 @@ if (document.getElementById("battleContainer")) {
   }
 }
 
-//pathway 1
+
 document.addEventListener("DOMContentLoaded", function () {
   if (document.getElementById("pathDialogue")) {
     const leftButton = document.getElementById("leftButton");
@@ -890,25 +885,25 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-//right1
+
 document.addEventListener("DOMContentLoaded", function () {
-  // Parkour prompt on right1.html
+ 
   if (document.getElementById("parkourDialogue")) {
     const parkourYes = document.getElementById("parkourYes");
     const parkourNo = document.getElementById("parkourNo");
 
     parkourNo.addEventListener("click", function () {
-      // Return to forest2.html (back to pathway dialogue)
+    
       window.location.href = "forest2.html";
     });
 
     parkourYes.addEventListener("click", function () {
-      // Start the parkour game
+    
       startParkourGame();
     });
   }
 });
-//parkour game
+
 function startParkourGame() {
   const parkourDialogue = document.getElementById("parkourDialogue");
   if (parkourDialogue) parkourDialogue.style.display = "none";
@@ -1020,7 +1015,7 @@ function startParkourGame() {
   function checkGameOver() {
     if (gameOver) {
       canvas.style.display = "none";
-      // If the player succeeded, check if the chest was already opened.
+      
       if (success) {
         if (localStorage.getItem("chestOpened")) {
           window.location.href = "forest2.html";
@@ -1078,7 +1073,7 @@ function showChestDialogue() {
   });
 }
 
-//forest3 choice
+
 document.addEventListener("DOMContentLoaded", function () {
   if (document.getElementById("pathDialogue2")) {
     const leftButton = document.getElementById("leftButton");
@@ -1094,9 +1089,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-//right 2 choices
+
 document.addEventListener("DOMContentLoaded", function () {
-  // Check if the dialogue box exists
+
   if (document.getElementById("pathDialogue3")) {
     const leftButton = document.getElementById("leftButton");
     if (leftButton) {
@@ -1113,7 +1108,7 @@ document.addEventListener("DOMContentLoaded", function () {
         parseFloat(localStorage.getItem("playerHealth")) || 100;
 
       currentHealth -= 10;
-      if (currentHealth < 0) currentHealth = 0; // Ensure health doesn't go below 0
+      if (currentHealth < 0) currentHealth = 0; 
 
       localStorage.setItem("playerHealth", currentHealth);
 
@@ -1128,7 +1123,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-//cave entrance choice
+
 document.addEventListener("DOMContentLoaded", function () {
   if (document.getElementById("CaveEntrance")) {
     const leftButton = document.getElementById("leftButton");
@@ -1144,7 +1139,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-//cave1 continue going deeper choice
+
 document.addEventListener("DOMContentLoaded", function () {
   if (document.getElementById("Cave1")) {
     const leftButton = document.getElementById("leftButton");
@@ -1154,7 +1149,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Resource Collection Minigame
+
 document.addEventListener("DOMContentLoaded", function () {
   const collectButton = document.getElementById("collectResourcesButton");
   if (collectButton) {
@@ -1285,9 +1280,8 @@ function finishResourceMinigame() {
   document.body.appendChild(successDialogue);
 }
 
-//cave3
 document.addEventListener("DOMContentLoaded", function () {
-  // Check for the dialogue box in cave3.html
+
   const pathDialogue4 = document.getElementById("pathDialogue4");
   if (pathDialogue4) {
     const leftPathButton = document.getElementById("leftPathButton");
@@ -1295,21 +1289,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (leftPathButton) {
       leftPathButton.addEventListener("click", function () {
-        // For left, go to cave4.html (enemy fight and chest reward)
+        
         window.location.href = "Cave4.html";
       });
     }
 
     if (rightPathButton) {
       rightPathButton.addEventListener("click", function () {
-        // For right, go to cave5.html (deadend with crafting)
+        
         window.location.href = "Cave5.html";
       });
     }
   }
 });
 
-//crafting
+
 document.addEventListener("DOMContentLoaded", function () {
   console.log("DOM loaded. URL:", document.location.href);
 
@@ -1437,7 +1431,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const goBackButton = document.getElementById("goBackButton");
   if (goBackButton) {
     goBackButton.addEventListener("click", function () {
-      // Redirect to your desired page, e.g., forest2.html
+     
       window.location.href = "Cave3.html";
     });
   } else {
@@ -1445,7 +1439,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-//chest2
+
 function showCave4ChestDialogue() {
   const battleDialogue = document.getElementById("battleDialogue");
   if (battleDialogue) {
@@ -1489,7 +1483,7 @@ function showCave4ChestDialogue() {
   document.body.appendChild(chestDialogue);
 }
 
-//middle cave choice 1
+
 document.addEventListener("DOMContentLoaded", function () {
   if (document.getElementById("MiddleCave")) {
     const leftButton = document.getElementById("leftButton");
@@ -1505,7 +1499,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-//after right battle choice
+
 document.addEventListener("DOMContentLoaded", function () {
   if (document.getElementById("MiddleCave1")) {
     const leftButton = document.getElementById("leftButton");
@@ -1521,7 +1515,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-//middle section cave left pathway leading to ancient house
+
 document.addEventListener("DOMContentLoaded", function () {
   if (document.getElementById("MiddleCaveLeft")) {
     const leftButton = document.getElementById("leftButton");
@@ -1537,7 +1531,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Ancient House
+
 
 function checkAncientHousePuzzles() {
   const doorButton = document.getElementById("doorButton");
@@ -1577,12 +1571,12 @@ document.addEventListener("DOMContentLoaded", function () {
       .addEventListener("click", function () {
         window.location.href = "Lowersectioncave.html";
       });
-    // Check puzzle completion on load
+  
     checkAncientHousePuzzles();
   }
 });
 
-// Puzzle Success Dialogue
+
 function showPuzzleSuccessDialogue(message, callback) {
   const dialogue = document.createElement("div");
   dialogue.id = "puzzleSuccessDialogue";
@@ -1680,7 +1674,7 @@ function startPuzzle1() {
   let inputEnabled = false;
 
   function generateSequence() {
-    sequence.push(colors[Math.floor(Math.random() * colors.length)]); // Add one more color each round
+    sequence.push(colors[Math.floor(Math.random() * colors.length)]);
   }
 
   function flashSequence() {
@@ -1756,7 +1750,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Puzzle 2: Door Lock Puzzle
+
 function startPuzzle2() {
   const overlay = document.createElement("div");
   overlay.id = "puzzle2Overlay";
@@ -1834,7 +1828,7 @@ function startPuzzle2() {
   });
 }
 
-// Puzzle 3: Riddle Puzzle
+
 function startPuzzle3() {
   const overlay = document.createElement("div");
   overlay.id = "puzzle3Overlay";
@@ -1900,7 +1894,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-//Lower end cave choices
+
 document.addEventListener("DOMContentLoaded", function () {
   if (document.getElementById("LowerCave")) {
     const Area1 = document.getElementById("Area1");
@@ -1954,7 +1948,7 @@ document.addEventListener("DOMContentLoaded", function () {
   checkBossDoorLock();
 });
 
-// ROTATING KEY PUZZLE
+
 function startRotatingKeyPuzzle() {
   const keyImage = document.getElementById("keyImage");
   const rotateButton = document.getElementById("rotateKeyButton");
@@ -2021,7 +2015,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-//Stone balancing puzzle
+
 function startStoneBalancingPuzzle() {
   const stones = document.querySelectorAll(".stone");
   const leftScale = document.getElementById("leftScale");
@@ -2051,7 +2045,7 @@ function startStoneBalancingPuzzle() {
   }
 
   stones.forEach((stone) => {
-    // Disable HTML5 drag-drop
+  
     stone.draggable = false;
 
     let offsetX = 0,
@@ -2261,7 +2255,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-//Waterflow puzzle
+
 function startWaterFlowPuzzle() {
   const puzzleContainer = document.getElementById("waterFlowContainer");
   if (!puzzleContainer) {
@@ -2293,10 +2287,10 @@ function startWaterFlowPuzzle() {
 
   const grid = [];
   const rotationToArrow = {
-    0: "→", // right
-    90: "↓", // down
-    180: "←", // left
-    270: "↑", // up
+    0: "→", 
+    90: "↓", 
+    180: "←",
+    270: "↑", 
   };
 
   for (let i = 0; i < gridSize * gridSize; i++) {
@@ -2351,7 +2345,7 @@ function startWaterFlowPuzzle() {
 
   checkButton.addEventListener("click", function () {
     let solved = grid.every((cell, index) => {
-      // Skip Source and Basin cells
+    
       if (sourceIndices.includes(index) || basinIndices.includes(index)) {
         return true;
       }
@@ -2393,7 +2387,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-//star puzzle
+
 function startStarAlignmentPuzzle() {
   const puzzleContainer = document.getElementById("starAlignmentContainer");
   if (!puzzleContainer) {
