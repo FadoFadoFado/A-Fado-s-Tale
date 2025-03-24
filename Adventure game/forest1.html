@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Forest Scene</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="forest-body"> 
+  <div id="forestScene">
+    
+    <div class="status-bars">
+      <div class="bar" data-max="100">
+        <span class="bar-label">Health</span>
+        <div class="bar-fill" id="healthFill"></div>
+      </div>
+      <div class="bar" data-max="100">
+        <span class="bar-label">Food</span>
+        <div class="bar-fill" id="foodFill"></div>
+      </div>
+      <div class="bar" data-max="100">
+        <span class="bar-label">Water</span>
+        <div class="bar-fill" id="waterFill"></div>
+      </div>
+      <button id="effectsButton">Effects?</button>
+    </div>
+
+    
+    <button id="menuButton" class="menu-button">Menu</button>
+
+    
+    <main class="game-area">
+      <p style="padding: 20px;">The forest</p>
+    </main>
+
+    <aside id="effectsPanel" class="effects-panel">
+      <h2>Active Effects</h2>
+      <ul id="effectsList">
+        <li>No effects active</li>
+      </ul>
+    </aside>
+
+<div id="inventoryOverlay" class="overlay">
+  <div class="overlay-content">
+    <h2>Inventory</h2>
+    <pre id="inventoryContent"></pre>
+    <button id="closeInventory">Close</button>
+  </div>
+</div>
+
+
+    
+    <div id="pauseMenu" class="overlay">
+      <div class="overlay-content">
+        <h2>Paused</h2>
+        <button id="resumeButton">Resume</button>
+        <button id="quitButton">Quit to Main Menu</button>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="battleContainer">
+    <div id="battleDialogue" class="dialogue-box">
+      <p id="battleText">Where could have he gone?</p>
+      <button id="battleNextButton" class="choice-button">Next</button>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stone Balancing Puzzle</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class = area>
+  <main class="game-area">
+    <div id="stonePuzzleOverlay" class="puzzle-overlay">
+      <p>Drag the stones onto the scale to balance it.</p>
+      <div id="scaleContainer">
+        <div id="leftScale" class="scale-side"></div>
+        <div id="scaleBase"></div>
+        <div id="rightScale" class="scale-side"></div>
+      </div>
+      <div id="stoneContainer">
+        <div class="stone" data-weight="5">Stone 5</div>
+        <div class="stone" data-weight="4">Stone 4</div>
+        <div class="stone" data-weight="3">Stone 3</div>
+        <div class="stone" data-weight="2">Stone 2</div>
+        <div class="stone" data-weight="1">Stone 1</div>
+      </div>
+      <button id="checkBalanceButton">Check Balance</button>
+      <button id="exitPuzzleButton">Exit</button>
+    </div>
+
+    
+    <div class="dialogue-box" style="display: none;">
+      <p id="dialogueText"></p>
+      <button id="continueButton">Continue</button>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

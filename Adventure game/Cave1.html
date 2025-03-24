@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cave</title>
+    
+    <link
+      href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap"
+      rel="stylesheet"
+    />
+   
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="cave1">
+    
+    <div class="status-bars">
+      
+      <div class="bar health-bar" data-max="100">
+        <span class="bar-label">Health</span>
+        <div class="bar-fill" id="healthFill" style="width: 100%"></div>
+      </div>
+      
+      <div class="bar food-bar" data-max="100">
+        <span class="bar-label">Food</span>
+        <div class="bar-fill" id="foodFill" style="width: 100%"></div>
+      </div>
+      
+      <div class="bar water-bar" data-max="100">
+        <span class="bar-label">Water</span>
+        <div class="bar-fill" id="waterFill" style="width: 100%"></div>
+      </div>
+      
+      <button id="effectsButton">Effects?</button>
+    </div>
+
+    
+    <button id="menuButton" class="menu-button">Menu</button>
+
+  
+    <main class="game-area">
+     
+      <p style="padding: 20px">Cave</p>
+    </main>
+
+  
+    <aside id="effectsPanel" class="effects-panel">
+      <h2>Active Effects</h2>
+      <ul id="effectsList">
+        <li>No effects active</li>
+      </ul>
+    </aside>
+
+   
+    <div class="dialogue-box" id="Cave1" style="display: block">
+      <p id="pathText">You enter the cave. What do you do?</p>
+      <button class="choice-button" id="leftButton">
+        Continue going deeper
+      </button>
+      <button class="choice-button" id="collectResourcesButton">
+        Collect some resources
+      </button>
+    </div>
+
+    
+    <div id="inventoryOverlay" class="overlay" style="display: none">
+      <div class="overlay-content">
+        <h2>Inventory</h2>
+        <pre id="inventoryContent">Placeholder for inventory items...</pre>
+        <button id="closeInventory">Close</button>
+      </div>
+    </div>
+
+  
+    <div id="pauseMenu" class="overlay">
+      <div class="overlay-content">
+        <h2>Paused</h2>
+        <button id="resumeButton">Resume</button>
+        <button id="quitButton">Quit to Main Menu</button>
+      </div>
+    </div>
+
+
+    <script src="script.js"></script>
+  </body>
+</html>

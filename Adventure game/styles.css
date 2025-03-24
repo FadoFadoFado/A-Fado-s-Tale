@@ -1,0 +1,885 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+
+body {
+  font-family: 'IM Fell English SC', serif;
+  background: linear-gradient(to bottom, #0a2818, #1c4b27, #315c31);
+  background-image: url('./photos/menubackground1.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.game-title {
+  font-size: 3rem;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+  margin-bottom: 30px;
+}
+
+
+.menu {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+
+.menu-list,
+.controls-list {
+  list-style: none;
+  padding: 0 20px;
+  font-size: 1.2rem;
+
+}
+
+.menu-list li,
+.controls-list li {
+  margin: 10px 0;
+}
+
+
+.menu-option {
+  background: #7c5e3c;
+  border: 2px solid #3b2c1a;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-family: inherit;
+}
+
+
+.menu-option:hover {
+  background: #92734d;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+
+.character-image, .dog-image, .exclamation {
+  mix-blend-mode: multiply;
+}
+
+
+
+
+.livingroom-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.livingroom-bg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body.livingroom-page {
+  background: linear-gradient(to bottom, #0a2818, #1c4b27, #315c31);
+}
+
+
+
+.character,
+.dog,
+.exclamation {
+  position: absolute;
+}
+
+
+.character {
+  left: 7.5%;
+  bottom: 20%;
+}
+
+.dog {
+  left: 40%;
+  bottom: 23%;
+}
+
+.exclamation {
+  left: 31%;
+  bottom: 38%;
+  display: none;
+  z-index: 10;
+}
+
+.character-image {
+  width: 15%;
+  height: auto;
+}
+
+.dog-image {
+  width: 35%;
+  height: auto;
+}
+
+.exclamation img {
+  width: 20%;
+  height: auto;
+}
+
+
+
+
+
+
+.dialogue-box {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  background: rgba(0, 0, 0, 0.8);
+  border: 3px solid white;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: white;
+  display: none; 
+  z-index: 100;
+}
+
+
+
+#nextButton {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#nextButton:hover {
+  background: lightgray;
+}
+
+.choice-button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: white;
+  color: black;
+  border: none;
+  font-size: 0.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'IM Fell English SC', serif;
+}
+
+.choice-button:hover {
+  background: lightgray;
+}
+
+
+
+#locationNextButton {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#locationNextButton:hover {
+  background: lightgray;
+}
+
+
+
+
+.bedroom-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url('./photos/Bedroom.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.basement-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url('./photos/Basement.jpeg') no-repeat center center;
+  background-size: cover;
+}
+
+
+
+.location-title {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: black;
+}
+
+
+.kitchen-page{
+  background-image: url('./photos/domestic-life-illustrated.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.basement-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url('./photos/Basement.jpeg') no-repeat center center;
+  background-size: cover;
+}
+
+
+.bedroom-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url('./photos/Bedroom.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+
+
+.white-next-button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+.forest-body {
+  font-family: 'IM Fell English SC', serif;
+  color: #fff;
+  background: url('./photos/menubackground1.jpg') no-repeat center center / cover;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden; 
+}
+
+
+.status-bars {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+
+.bar {
+  position: relative;
+  width: 200px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.bar-label {
+  position: absolute;
+  left: 8px;
+  top: 2px;
+  z-index: 2;
+  font-size: 0.8rem;
+}
+
+.bar-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: green; 
+}
+
+
+#effectsButton {
+  padding: 5px 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  z-index: 1000;
+  margin-left: 0px;
+}
+
+#craftingButton {
+  padding: 5px 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  z-index: 1000;
+  margin-left: 0px;
+}
+
+#effectsButton,
+#craftingButton {
+  margin-bottom: -1px; 
+}
+
+
+
+.menu-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px 15px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+}
+
+
+.game-area {
+  position: absolute;
+  top: 60px; 
+  bottom: 0;
+  left: 0;
+  right: 0;
+  size: 100%;
+  color: black;
+}
+
+.effects-panel {
+  position: absolute;
+  top: 10px;
+  left: 220px;
+  width: 200px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding: 10px;
+  display: none; 
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none; 
+  justify-content: center;
+  align-items: center;
+}
+
+
+.overlay-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid #fff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+
+.overlay-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  background: #fff;
+  color: #000;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  justify-content: center;
+  text-align: center;
+}
+
+.overlay-content button:hover {
+  background: #ccc;
+}
+
+.overlay button{
+ justify-content: center;
+  text-align: center;
+}
+
+#inventoryContent {
+  white-space: pre-wrap; 
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.cave-entrance{
+  background-image: url('./photos/2110.w023.n001.1235B.p1.1235.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.cave1{
+  background-image: url('./photos/2303.w030.n003.647B.p1.647.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.cave2{
+  background-image: url('./photos/0b7f2542-528c-4acf-b27e-b38df480258d.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+
+.cave3{
+  background-image: url('./photos/16279.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.cave4{
+  background-image: url('./photos/2308-w026-n002-3708B-p1-3708.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.ancienthouse{
+  background-image: url('./photos/freepik__the-style-is-pixel-art-with-a-retro-8bit-pixelated__50618.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.ancienthouse2{
+  background-image: url('./photos/freepik__the-style-is-pixel-art-with-a-retro-8bit-pixelated__50619.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.Lowersectioncave1{
+  background-image: url('./photos/freepik__the-style-is-pixel-art-with-a-retro-8bit-pixelated__50620.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.area{
+  background-image: url('./photos/50656.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.boss-defeated{
+  background-image: url('./photos/8670646.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+
+
+
+.resource-dot {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+.resource-dot.broken {
+  opacity: 0;
+  transform: scale(0);
+}
+
+
+
+.colorButton {
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+@keyframes flashAnimation {
+  0% { filter: brightness(1); transform: scale(1); }
+  25% { filter: brightness(3); transform: scale(1.2); }
+  50% { filter: brightness(2.5); transform: scale(1.1); }
+  100% { filter: brightness(1); transform: scale(1); }
+}
+
+.flash {
+  animation: flashAnimation 0.8s ease; /* Extended time for better visibility */
+}
+
+
+
+#dialContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.dial {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #fff;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+.dial.correct {
+  background: white;
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.puzzle-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  border: 3px solid white;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 500;
+}
+
+#keyContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+#keyImage {
+  width: 100px;
+  transition: transform 0.3s ease-in-out;
+}
+
+button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+#scaleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin: 20px;
+}
+
+.scale-side {
+  width: 100px;
+  height: 100px;
+  background: gray;
+  border: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.stone {
+  width: 50px;
+  height: 50px;
+  background: #8B4513;
+  border: 2px solid black;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  cursor: grab;
+}
+
+.drop-stone {
+    animation: dropAnimation 0.5s ease-out;
+}
+
+@keyframes dropAnimation {
+    0% { transform: translateY(-20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.pipeCell {
+  border: 2px solid #fff;
+  background: #4a90e2;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 60px;
+}
+
+
+
+#starAlignmentContainer {
+  margin: 20px auto;
+  padding: 10px;
+  text-align: center;
+  max-width: 500px;
+}
+
+
+.starCell {
+  width: 60px;
+  height: 60px;
+  margin: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  cursor: pointer;
+  background: #222;
+  color: #ffd700; 
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+
+
+#constellationWall {
+  width: 100%;
+  max-width: 500px;
+  height: 200px;
+  margin: 0 auto 20px auto;
+  background: #333; 
+  border: 3px solid #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+#targetConstellation {
+  color: #ffd700;
+  font-size: 1.5rem;
+  font-family: 'IM Fell English SC', serif;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+
+#targetConstellation {
+  color: #ffd700;
+  font-size: 1.5rem;
+  font-family: 'IM Fell English SC', serif;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+
+
+#ropeCuttingContainer {
+  margin: 20px auto;
+  max-width: 500px;
+  padding: 20px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  border: 3px solid #fff;
+  border-radius: 10px;
+}
+
+
+#ropeCuttingContainer p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #fff;
+}
+
+#ropeCuttingContainer button.menu-option {
+  background: #7c5e3c;
+  border: 2px solid #3b2c1a;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#ropeCuttingContainer button.menu-option:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+
+
+.credits-container {
+  position: absolute;
+  top: 100%; 
+  width: 100%;
+  text-align: center;
+  
+  animation: creditsScroll 30s linear forwards;
+}
+
+@keyframes creditsScroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-200%); }
+}
+
+body.credits {
+  background: black !important;
+}
+
+#parkourCanvas {
+  touch-action: none;
+}
+
+@media only screen and (max-width: 640px) {
+   
+    body {
+        font-size: 0.9rem;
+    }
+    
+    .menu, .overlay-content {
+        width: 90%;
+        padding: 10px;
+    }
+    
+    .game-title {
+        font-size: 2rem;
+    }
+    
+    .menu-option {
+        font-size: 1rem;
+        padding: 10px 15px;
+        margin: 5px 0;
+    }
+
+    
+    .character-image, .dog-image, .exclamation img {
+        width: 10%;
+    }
+   
+  .character {
+    left: -25%;   
+    bottom: 15%;  
+  }
+
+  .dog {
+    left: 25%;    
+    bottom: 20%;  
+  }
+
+  .exclamation {
+    left: 13%;    
+    bottom: 40%;  
+  }
+
+   .dialogue-box {
+    width: 90%;
+    font-size: 1rem; 
+    padding: 5px;
+    bottom: 8%; 
+  }
+
+  
+
+}
+
+#craftingButton {
+  position: relative;
+  z-index: 1000;
+}
+
+#parkourCanvas {
+  touch-action: none;
+  position: relative;
+  z-index: 1000;
+}
+
+
